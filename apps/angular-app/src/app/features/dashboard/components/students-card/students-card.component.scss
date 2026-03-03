@@ -16,6 +16,26 @@
     color: var(--color-text-primary);
   }
 
+  &__loader {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  &__skeleton {
+    display: block;
+    height: 56px;
+    border-radius: var(--radius-md);
+    background: linear-gradient(
+      90deg,
+      var(--color-bg) 25%,
+      var(--color-border) 50%,
+      var(--color-bg) 75%
+    );
+    background-size: 200% 100%;
+    animation: skeleton-shimmer 1.4s ease-in-out infinite;
+  }
+
   &__list {
     list-style: none;
     display: flex;
@@ -61,4 +81,9 @@
     text-align: center;
     padding: var(--space-5) 0;
   }
+}
+
+@keyframes skeleton-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
 }

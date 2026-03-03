@@ -1,8 +1,10 @@
 import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { Router } from '@angular/router';
 import { LucideAngularModule, Plus, Users } from 'lucide-angular';
 import { AuthService } from '../../core/services/auth.service';
 import { DashboardService } from './services/dashboard.service';
+import { VOLUNTEER_DASHBOARD_MOCK } from './data/dashboard.mock';
 import { BtnComponent } from '../../shared/ui/atoms/btn/btn.component';
 import { StudentsCardComponent } from './components/students-card/students-card.component';
 import { TaskSummaryCardComponent } from './components/task-summary-card/task-summary-card.component';
@@ -34,12 +36,23 @@ export class DashboardComponent {
 
   protected readonly currentUser = this.authService.currentUser;
 
-  protected readonly dashboardData = this.dashboardService.data;
-
   protected readonly greeting = computed(() => {
     const user = this.currentUser();
     return user ? `Bonjour, ${user.firstName} 👋` : 'Bonjour 👋';
   });
+
+  protected readonly students = toSignal(this.dashboardService.students$, {
+    initialValue: null,
+  });
+
+  protected readonly unreadMessages = toSignal(this.dashboardService.unreadMessages$, {
+    initialValue: null,
+  });
+
+  // TODO: brancher TaskService
+  protected readonly taskSummary = VOLUNTEER_DASHBOARD_MOCK.taskSummary;
+
+  protected readonly events = VOLUNTEER_DASHBOARD_MOCK.events;
 
   protected navigateToTasks(): void {
     this.router.navigate(['/tasks']);

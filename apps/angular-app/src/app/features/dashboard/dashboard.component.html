@@ -12,21 +12,21 @@
   <div class="dashboard__grid">
     <div class="dashboard__col dashboard__col--main">
       <section id="students-section" aria-label="Liste des élèves">
-        <app-students-card [students]="dashboardData().students" />
+        <app-students-card [students]="students()" />
       </section>
 
       <section aria-label="Résumé des tâches">
-        <app-task-summary-card [summary]="dashboardData().taskSummary" />
+        <app-task-summary-card [summary]="taskSummary" />
       </section>
     </div>
 
     <div class="dashboard__col dashboard__col--side">
       <section aria-label="Prochains événements">
-        <app-events-card [events]="dashboardData().events" />
+        <app-events-card [events]="events" />
       </section>
 
       <section aria-label="Messages non lus">
-        <app-messages-card [unreadCount]="dashboardData().unreadMessages" />
+        <app-messages-card [messages]="unreadMessages()" />
       </section>
     </div>
   </div>

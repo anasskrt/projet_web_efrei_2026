@@ -16,25 +16,84 @@
     color: var(--color-text-primary);
   }
 
-  &__counter {
+  &__loader {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  &__skeleton {
+    display: block;
+    height: 48px;
+    border-radius: var(--radius-md);
+    background: linear-gradient(
+      90deg,
+      var(--color-bg) 25%,
+      var(--color-border) 50%,
+      var(--color-bg) 75%
+    );
+    background-size: 200% 100%;
+    animation: skeleton-shimmer 1.4s ease-in-out infinite;
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  &__item {
     display: flex;
     align-items: center;
     gap: var(--space-3);
-    padding: var(--space-4);
+    padding: var(--space-3);
     border-radius: var(--radius-md);
-    background-color: var(--color-primary-light);
+    transition: background-color var(--transition-fast);
+
+    &:hover {
+      background-color: var(--color-bg);
+    }
   }
 
-  &__count {
-    font-size: var(--font-size-display);
-    font-weight: var(--font-weight-bold);
-    color: var(--color-primary);
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+    min-width: 0;
   }
 
-  &__label {
+  &__sender {
     font-size: var(--font-size-body);
-    color: var(--color-primary);
     font-weight: var(--font-weight-medium);
+    color: var(--color-text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__excerpt {
+    font-size: var(--font-size-small);
+    color: var(--color-text-secondary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__badge {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 var(--space-1);
+    border-radius: 10px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-semibold);
   }
 
   &__empty {
@@ -43,4 +102,9 @@
     text-align: center;
     padding: var(--space-5) 0;
   }
+}
+
+@keyframes skeleton-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
 }

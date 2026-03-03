@@ -5,15 +5,25 @@
       <h3 class="students-card__title">Mes élèves</h3>
     </div>
 
-    @if (hasStudents()) {
+    @if (isLoading()) {
+      <div class="students-card__loader" role="status" aria-label="Chargement des élèves">
+        <span class="students-card__skeleton"></span>
+        <span class="students-card__skeleton"></span>
+        <span class="students-card__skeleton"></span>
+      </div>
+    } @else if (hasStudents()) {
       <ul class="students-card__list" role="list">
-        @for (student of students(); track student.id) {
+        @for (student of students()!; track student.id) {
           <li class="students-card__item">
             <app-avatar [initials]="getInitials(student)" [size]="40" [alt]="student.firstName + ' ' + student.lastName" />
             <div class="students-card__info">
               <span class="students-card__name">{{ student.firstName }} {{ student.lastName }}</span>
               <span class="students-card__tasks">
-                {{ student.taskCount }} tâche{{ student.taskCount > 1 ? 's' : '' }} en cours
+                @if (student.taskCount !== null) {
+                  {{ student.taskCount }} tâche{{ student.taskCount > 1 ? 's' : '' }} en cours
+                } @else {
+                  -- tâches en cours
+                }
               </span>
             </div>
           </li>

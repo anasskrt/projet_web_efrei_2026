@@ -14,7 +14,15 @@ export type StudentInfo = {
   id: string;
   firstName: string;
   lastName: string;
-  taskCount: number;
+  taskCount: number | null;
+};
+
+export type DashboardUnreadMessage = {
+  conversationId: string;
+  senderName: string;
+  excerpt: string;
+  unreadCount: number;
+  updatedAt: Date;
 };
 
 export type DashboardData = {

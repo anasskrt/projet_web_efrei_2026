@@ -13,11 +13,12 @@ import type { StudentInfo } from '../../models/dashboard.models';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class StudentsCardComponent {
-  students = input<StudentInfo[]>([]);
+  students = input<StudentInfo[] | null>(null);
 
   protected readonly UsersIcon = Users;
 
-  protected readonly hasStudents = computed(() => this.students().length > 0);
+  protected readonly isLoading = computed(() => this.students() === null);
+  protected readonly hasStudents = computed(() => (this.students()?.length ?? 0) > 0);
 
   protected getInitials(student: StudentInfo): string {
     return `${student.firstName[0]}${student.lastName[0]}`.toUpperCase();

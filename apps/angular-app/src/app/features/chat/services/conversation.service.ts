@@ -14,7 +14,7 @@ import {
   where,
   writeBatch,
 } from 'firebase/firestore';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { FIREBASE_FIRESTORE } from '../../../core/tokens/firebase.tokens';
 import { FIRESTORE_COLLECTIONS } from '../../../core/constants/firestore-collections';
 import type { Conversation } from '../models/conversation.model';
@@ -205,6 +205,18 @@ export class ConversationService {
       },
     );
     return ref.id;
+  }
+
+  watchTotalUnreadCount(userId: string): Observable<number> {
+    return this.getConversations(userId).pipe(
+      map((conversations) => conversations.reduce((total, c) => total + c.unreadCount, 0)),
+    );
+  }
+
+  watchUnreadConversations(userId: string, limit = 3): Observable<Conversation[]> {
+    return this.getConversations(userId).pipe(
+      map((conversations) => conversations.filter((c) => c.unreadCount > 0).slice(0, limit)),
+    );
   }
 
   async createGroupConversation(

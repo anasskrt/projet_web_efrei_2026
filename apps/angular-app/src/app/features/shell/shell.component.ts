@@ -42,6 +42,10 @@ export class ShellComponent {
     { initialValue: this.router.url },
   );
 
+  private readonly totalUnreadCount = toSignal(this.dashboardService.totalUnreadCount$, {
+    initialValue: 0,
+  });
+
   protected readonly pageTitle = computed(() => {
     const url = this.currentUrl();
     const item = NAV_ITEMS.find((i) => url.startsWith(i.route));
@@ -49,7 +53,7 @@ export class ShellComponent {
   });
 
   protected readonly navItems = computed<NavItem[]>(() => {
-    const unread = this.dashboardService.data().unreadMessages;
+    const unread = this.totalUnreadCount();
     return NAV_ITEMS.map((item) =>
       item.route === '/chat' ? { ...item, badge: unread > 0 ? unread : undefined } : item,
     );
