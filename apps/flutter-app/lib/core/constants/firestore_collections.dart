@@ -4,4 +4,5 @@ abstract final class FirestoreCollections {
   static const String messages = 'messages';
   static const String calendarEvents = 'calendar_events';
   static const String conversations = 'conversations';
+  static const String events = 'events';
 }

@@ -6,6 +6,8 @@ import '../../features/auth/providers/auth_provider.dart';
 import '../../features/auth/screens/forgot_password_screen.dart';
 import '../../features/auth/screens/login_screen.dart';
 import '../../features/auth/screens/register_screen.dart';
+import '../../features/calendar/presentation/pages/event_detail_page.dart';
+import '../../features/calendar/presentation/pages/event_form_page.dart';
 import '../../features/calendar/screens/calendar_screen.dart';
 import '../../features/chat/presentation/pages/conversation_detail_page.dart';
 import '../../features/chat/screens/chat_screen.dart';
@@ -82,6 +84,16 @@ final appRouterProvider = Provider<GoRouter>((ref) {
         path: '/chat/:id',
         builder: (_, state) => ConversationDetailPage(
           conversationId: state.pathParameters['id']!,
+        ),
+      ),
+      GoRoute(
+        path: '/calendar/new',
+        builder: (_, __) => const EventFormPage(),
+      ),
+      GoRoute(
+        path: '/calendar/:id',
+        builder: (_, state) => EventDetailPage(
+          eventId: state.pathParameters['id']!,
         ),
       ),
     ],

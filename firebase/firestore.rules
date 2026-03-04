@@ -1,6 +1,7 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
+
     match /users/{userId} {
       // Own document : full read/write
       allow get, write: if request.auth != null && request.auth.uid == userId;
@@ -28,7 +29,7 @@ service cloud.firestore {
         request.auth.uid == request.resource.data.createdBy;
 
       // Modification :
-      // - Bénévole créateur peut tout modifier
+      // - Bénévole créateur peut tout modifier (y compris dueDate pour linkedTaskId)
       // - Élève assigné peut uniquement modifier le champ status et updatedAt
       allow update: if request.auth != null && (
         request.auth.uid == resource.data.createdBy ||
@@ -39,6 +40,25 @@ service cloud.firestore {
       // Suppression : bénévole créateur uniquement
       allow delete: if request.auth != null &&
         request.auth.uid == resource.data.createdBy;
+    }
+
+    match /events/{eventId} {
+      // Lecture (get + list) : bénévole créateur OU élève invité
+      allow read: if request.auth != null &&
+        (request.auth.uid == resource.data.volunteerId ||
+         request.auth.uid in resource.data.studentIds);
+
+      // Création : l'appelant doit être le volunteerId du document
+      allow create: if request.auth != null &&
+        request.auth.uid == request.resource.data.volunteerId;
+
+      // Modification : bénévole créateur uniquement
+      allow update: if request.auth != null &&
+        request.auth.uid == resource.data.volunteerId;
+
+      // Suppression : bénévole créateur uniquement
+      allow delete: if request.auth != null &&
+        request.auth.uid == resource.data.volunteerId;
     }
 
     match /conversations/{conversationId} {
