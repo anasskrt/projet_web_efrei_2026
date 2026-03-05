@@ -9,7 +9,7 @@ test.describe('Page de connexion', () => {
     await page.goto('/auth/login');
   });
 
-  test('devrait afficher le formulaire de connexion correctement', async ({
+  test('devrait afficher le formulaire de connexion correctement ts', async ({
     page,
   }) => {
     // Vérifier le titre de la page
