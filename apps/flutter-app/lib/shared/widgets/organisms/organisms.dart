@@ -1,4 +1,3 @@
-/// Organisms — barrel export
 library;
 
 export 'app_bottom_nav.dart';

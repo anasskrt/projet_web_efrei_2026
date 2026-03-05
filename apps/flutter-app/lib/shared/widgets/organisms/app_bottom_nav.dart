@@ -1,35 +1,9 @@
-/// Organism : AppBottomNav — Learn@Home
-///
-/// Barre de navigation inférieure Material 3 conforme à la charte UI mobile.
-/// Maximum 5 destinations. Icônes Lucide + labels. Indicateur actif en color-primary.
-///
-/// Utilise [NavigationBar] Material 3 (pas [BottomNavigationBar]).
-///
-/// ## Paramètres
-/// - [destinations] : liste de [AppNavDestination] (2–4 items)
-/// - [selectedIndex]: index de l'item actif
-/// - [onDestinationSelected]: callback de navigation
-///
-/// ## Exemple
-/// ```dart
-/// AppBottomNav(
-///   selectedIndex: _currentIndex,
-///   onDestinationSelected: (i) => _onNavTap(i, context),
-///   destinations: const [
-///     AppNavDestination(icon: LucideIcons.layoutDashboard, label: 'Accueil'),
-///     AppNavDestination(icon: LucideIcons.checkSquare, label: 'Tâches'),
-///     AppNavDestination(icon: LucideIcons.messageCircle, label: 'Chat'),
-///     AppNavDestination(icon: LucideIcons.calendar, label: 'Calendrier'),
-///   ],
-/// )
-/// ```
 library;
 
 import 'package:flutter/material.dart';
 
 import '../../../core/theme/app_colors.dart';
 
-// ─── Types ────────────────────────────────────────────────────────────────────
 
 /// Destination de navigation.
 class AppNavDestination {
@@ -46,7 +20,6 @@ class AppNavDestination {
   final int? badge;
 }
 
-// ─── Widget ───────────────────────────────────────────────────────────────────
 
 /// Barre de navigation inférieure Learn@Home.
 class AppBottomNav extends StatelessWidget {

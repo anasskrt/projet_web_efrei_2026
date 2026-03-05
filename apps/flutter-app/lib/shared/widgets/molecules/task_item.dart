@@ -1,30 +1,3 @@
-/// Molecule : TaskItem — Learn@Home
-///
-/// Élément de liste pour une tâche. Affiche : titre, échéance/assigné,
-/// badge de statut et icône d'action. Tâche terminée -> titre barré + opacité 60%.
-///
-/// ## Paramètres
-/// - [title]       : titre de la tâche (obligatoire)
-/// - [status]      : [TaskStatus] — détermine le badge
-/// - [subtitle]    : texte secondaire (échéance ou nom de l'assigné)
-/// - [isCompleted] : si true, titre barré et opacité 60%
-/// - [onTap]       : ouvre le détail de la tâche
-/// - [onActionTap] : action secondaire (ex. supprimer)
-/// - [actionIcon]  : icône de l'action secondaire (défaut: LucideIcons.trash2)
-/// - [actionLabel] : label accessible de l'action
-///
-/// ## Exemple
-/// ```dart
-/// TaskItem(
-///   title: 'Réviser le chapitre 3',
-///   status: TaskStatus.inProgress,
-///   subtitle: 'Échéance : 10 mars',
-///   onTap: () => context.push('/tasks/${task.id}'),
-///   onActionTap: () => ref.read(taskNotifierProvider.notifier).deleteTask(task.id),
-///   actionIcon: LucideIcons.trash2,
-///   actionLabel: 'Supprimer la tâche',
-/// )
-/// ```
 library;
 
 import 'package:flutter/material.dart';

@@ -1,35 +1,3 @@
-/// Molecule : AppFormField — Learn@Home
-///
-/// Champ de formulaire complet : label + input + message d'erreur/aide.
-/// Composition de l'atom [AppInput].
-///
-/// ## Paramètres
-/// - [label]      : label du champ (obligatoire)
-/// - [hint]       : placeholder interne
-/// - [helperText] : texte d'aide sous le champ
-/// - [errorText]  : message d'erreur (active le border rouge si non null)
-/// - [controller] : TextEditingController
-/// - [obscureText]: mot de passe
-/// - [keyboardType]
-/// - [prefixIcon] : icône Lucide en préfixe
-/// - [suffixIcon] : widget en suffixe
-/// - [onChanged]
-/// - [onSubmitted]
-/// - [enabled]
-/// - [autofocus]
-/// - [textInputAction]
-///
-/// ## Exemple
-/// ```dart
-/// AppFormField(
-///   label: 'Adresse e-mail',
-///   hint: 'vous@exemple.com',
-///   keyboardType: TextInputType.emailAddress,
-///   prefixIcon: LucideIcons.mail,
-///   errorText: emailError,
-///   onChanged: (v) => ref.read(formProvider.notifier).setEmail(v),
-/// )
-/// ```
 library;
 
 import 'package:flutter/material.dart';

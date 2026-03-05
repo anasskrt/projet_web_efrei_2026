@@ -1,4 +1,3 @@
-/// Molecules — barrel export
 library;
 
 export 'app_card.dart';

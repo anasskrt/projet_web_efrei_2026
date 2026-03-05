@@ -1,6 +1,3 @@
-/// Tokens de rayon de bordure — Learn@Home
-///
-/// Source : shared/docs/UI.doc.md §2 "Rayons de bordure"
 library;
 
 import 'package:flutter/material.dart';

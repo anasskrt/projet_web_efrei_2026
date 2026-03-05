@@ -1,36 +1,3 @@
-/// Molecule : AppToast — Learn@Home
-///
-/// Notification toast affichée en bas de l'écran (mobile centré).
-/// 4 types : success | error | warning | info.
-/// Auto-dismiss après 4 secondes.
-///
-/// Usage via la fonction utilitaire [showAppToast] (ne pas instancier directement).
-///
-/// ## Paramètres de [showAppToast]
-/// - [context]  : BuildContext
-/// - [message]  : texte affiché
-/// - [type]     : [AppToastType] — success | error | warning | info
-/// - [duration] : durée d'affichage (défaut 4s)
-///
-/// ## Exemple
-/// ```dart
-/// // Dans un listener Riverpod
-/// ref.listen(taskNotifierProvider, (_, next) {
-///   if (next.hasError) {
-///     showAppToast(
-///       context,
-///       message: 'Impossible de créer la tâche',
-///       type: AppToastType.error,
-///     );
-///   } else if (next.hasValue) {
-///     showAppToast(
-///       context,
-///       message: 'Tâche créée avec succès',
-///       type: AppToastType.success,
-///     );
-///   }
-/// });
-/// ```
 library;
 
 import 'package:flutter/material.dart';
@@ -41,12 +8,10 @@ import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_typography.dart';
 
-// ─── Types ────────────────────────────────────────────────────────────────────
 
 /// Types de toast disponibles.
 enum AppToastType { success, error, warning, info }
 
-// ─── Fonction utilitaire ──────────────────────────────────────────────────────
 
 /// Affiche un toast conforme à la charte UI Learn@Home.
 void showAppToast(
@@ -72,7 +37,6 @@ void showAppToast(
     );
 }
 
-// ─── Widget interne ───────────────────────────────────────────────────────────
 
 class _AppToastContent extends StatelessWidget {
   const _AppToastContent({required this.message, required this.type});
@@ -146,7 +110,6 @@ class _AppToastContent extends StatelessWidget {
   }
 }
 
-// ─── Modèle interne ────────────────────────────────────────────────────────────
 
 class _ToastTokens {
   const _ToastTokens({

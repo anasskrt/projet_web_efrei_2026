@@ -1,16 +1,3 @@
-/// Atom : AppStatusBadge — Learn@Home
-///
-/// Badge coloré indiquant le statut d'une tâche. 4 statuts supportés.
-/// Couleurs et styles centralisés dans AppColors / AppTypography.
-///
-/// ## Paramètres
-/// - [status] : [TaskStatus] — todo | inProgress | done | late
-///
-/// ## Exemple
-/// ```dart
-/// AppStatusBadge(status: TaskStatus.inProgress)
-/// AppStatusBadge(status: TaskStatus.done)
-/// ```
 library;
 
 import 'package:flutter/material.dart';
@@ -19,7 +6,6 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_typography.dart';
 
-// ─── Types ────────────────────────────────────────────────────────────────────
 
 /// Statuts possibles d'une tâche.
 enum TaskStatus {
@@ -53,7 +39,6 @@ enum TaskStatus {
   };
 }
 
-// ─── Widget ───────────────────────────────────────────────────────────────────
 
 /// Badge de statut d'une tâche.
 class AppStatusBadge extends StatelessWidget {
@@ -100,7 +85,6 @@ class AppStatusBadge extends StatelessWidget {
   }
 }
 
-// ─── Modèle interne ────────────────────────────────────────────────────────────
 
 class _BadgeTokens {
   const _BadgeTokens({required this.background, required this.foreground});

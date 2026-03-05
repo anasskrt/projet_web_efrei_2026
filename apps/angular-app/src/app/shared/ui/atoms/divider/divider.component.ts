@@ -1,11 +1,3 @@
-/**
- * @component DividerComponent
- * @description Séparateur horizontal simple. Utilise MatDivider de Material.
- *
- * @example
- * <app-divider />
- * <app-divider [vertical]="true" />
- */
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { MatDividerModule } from '@angular/material/divider';
 
@@ -18,6 +10,5 @@ import { MatDividerModule } from '@angular/material/divider';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DividerComponent {
-  /** Divider vertical si true */
   vertical = input<boolean>(false);
 }

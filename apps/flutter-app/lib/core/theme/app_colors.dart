@@ -1,7 +1,3 @@
-/// Tokens de couleurs centralisés — Learn@Home
-///
-/// Source : shared/docs/UI.doc.md §2 "Couleurs"
-/// Usage : toujours référencer ces constantes, jamais de hex en dur dans les composants.
 library;
 
 import 'package:flutter/material.dart';

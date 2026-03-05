@@ -1,35 +1,3 @@
-/// Atom : AppInput — Learn@Home
-///
-/// Champ de saisie conforme à la charte UI. Styles gérés par [InputDecorationTheme]
-/// dans [AppTheme]. Ce widget ajoute uniquement la gestion du focus visuel
-/// et des états error/disabled.
-///
-/// ## Paramètres
-/// - [controller]   : TextEditingController (optionnel)
-/// - [label]        : label flottant au-dessus du champ
-/// - [hint]         : placeholder
-/// - [errorText]    : message d'erreur (active le border danger si non null)
-/// - [helperText]   : texte d'aide sous le champ
-/// - [obscureText]  : pour les mots de passe
-/// - [keyboardType] : type de clavier
-/// - [prefixIcon]   : icône Lucide en préfixe
-/// - [suffixIcon]   : widget en suffixe (ex. toggle visibility)
-/// - [onChanged]    : callback à chaque modification
-/// - [onSubmitted]  : callback à la validation clavier
-/// - [enabled]      : false = état désactivé
-/// - [autofocus]    : focus automatique au montage
-/// - [textInputAction]: action du clavier (next, done...)
-///
-/// ## Exemple
-/// ```dart
-/// AppInput(
-///   label: 'Adresse e-mail',
-///   hint: 'exemple@email.com',
-///   keyboardType: TextInputType.emailAddress,
-///   prefixIcon: LucideIcons.mail,
-///   onChanged: (v) => ref.read(loginFormProvider.notifier).setEmail(v),
-/// )
-/// ```
 library;
 
 import 'package:flutter/material.dart';

@@ -8,14 +8,12 @@ import '../../../../shared/widgets/atoms/app_status_badge.dart';
 import '../../data/repositories/task_repository.dart';
 import '../../domain/entities/task.dart';
 
-// ─── Repository ───────────────────────────────────────────────────────────────
 
 /// Provider du repository de tâches.
 final taskRepositoryProvider = Provider<TaskRepository>((ref) {
   return TaskRepository(firestore: ref.watch(firestoreProvider));
 });
 
-// ─── Fetch : liste des tâches de l'élève connecté ────────────────────────────
 
 /// Fetch one-shot des tâches assignées à l'élève connecté.
 final tasksByEleveProvider = FutureProvider<List<Task>>((ref) async {
@@ -24,7 +22,6 @@ final tasksByEleveProvider = FutureProvider<List<Task>>((ref) async {
   return ref.read(taskRepositoryProvider).getTasksByEleve(user.uid);
 });
 
-// ─── Fetch : liste des tâches créées par le bénévole connecté ────────────────
 
 /// Fetch one-shot des tâches créées par le bénévole connecté.
 final tasksByVolunteerProvider = FutureProvider<List<Task>>((ref) async {
@@ -33,7 +30,6 @@ final tasksByVolunteerProvider = FutureProvider<List<Task>>((ref) async {
   return ref.read(taskRepositoryProvider).getTasksByVolunteer(user.uid);
 });
 
-// ─── Fetch : élèves du bénévole connecté ─────────────────────────────────────
 
 /// Liste des élèves assignés au bénévole connecté.
 final studentsForVolunteerProvider =
@@ -44,7 +40,6 @@ final studentsForVolunteerProvider =
   return userService.getStudentsForVolunteer(user.uid);
 });
 
-// ─── Fetch : détail d'une tâche ───────────────────────────────────────────────
 
 /// Fetch one-shot du détail d'une tâche par son identifiant.
 final taskDetailProvider =
@@ -57,13 +52,11 @@ final tasksByStudentIdProvider =
   return ref.read(taskRepositoryProvider).getTasksByEleve(studentId);
 });
 
-// ─── Filtre statut ────────────────────────────────────────────────────────────
 
 /// Filtre actif sur la liste des tâches.
 /// `null` = tous les statuts.
 final taskStatusFilterProvider = StateProvider<TaskStatus?>((ref) => null);
 
-// ─── Mise à jour du statut ────────────────────────────────────────────────────
 
 /// Notifier pour la mise à jour du statut d'une tâche.
 class TaskStatusNotifier extends AsyncNotifier<void> {
@@ -86,7 +79,6 @@ class TaskStatusNotifier extends AsyncNotifier<void> {
 final taskStatusNotifierProvider =
     AsyncNotifierProvider<TaskStatusNotifier, void>(TaskStatusNotifier.new);
 
-// ─── Création de tâche (bénévole) ─────────────────────────────────────────────
 
 /// Notifier pour la création d'une tâche par un bénévole.
 class CreateTaskNotifier extends AsyncNotifier<void> {

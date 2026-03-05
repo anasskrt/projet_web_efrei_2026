@@ -1,18 +1,3 @@
-/// Atom : AppAvatar — Learn@Home
-///
-/// Avatar circulaire avec fallback sur les initiales de l'utilisateur.
-/// Tailles standardisées (24/32/40/48px). Conforme à la charte UI.
-///
-/// ## Paramètres
-/// - [name]      : nom affiché (utilisé pour les initiales en fallback)
-/// - [photoUrl]  : URL de la photo (optionnelle). Si null, affiche les initiales.
-/// - [size]      : [AppAvatarSize] — xs | sm | md | lg
-///
-/// ## Exemple
-/// ```dart
-/// AppAvatar(name: 'Alice Martin', size: AppAvatarSize.md)
-/// AppAvatar(name: 'Bob', photoUrl: 'https://...', size: AppAvatarSize.lg)
-/// ```
 library;
 
 import 'package:flutter/material.dart';
@@ -21,7 +6,6 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_typography.dart';
 
-// ─── Types ────────────────────────────────────────────────────────────────────
 
 /// Tailles standardisées de l'avatar.
 enum AppAvatarSize {
@@ -34,7 +18,6 @@ enum AppAvatarSize {
   final double dimension;
 }
 
-// ─── Widget ───────────────────────────────────────────────────────────────────
 
 /// Avatar utilisateur circulaire.
 class AppAvatar extends StatelessWidget {
@@ -84,7 +67,6 @@ class AppAvatar extends StatelessWidget {
   }
 }
 
-// ─── Fallback initiales ────────────────────────────────────────────────────────
 
 class _InitialsFallback extends StatelessWidget {
   const _InitialsFallback({required this.initials, required this.dimension});

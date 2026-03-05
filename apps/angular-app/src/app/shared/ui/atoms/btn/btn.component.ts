@@ -1,13 +1,3 @@
-/**
- * @component LahBtnComponent
- * @description Bouton principal de l'application. 4 variantes × 3 tailles.
- * Utilise le composant mat-button de Angular Material 3 pour le ripple et l'accessibilité.
- *
- * @example
- * <app-btn variant="primary" size="md" (btnClick)="onSave()">Enregistrer</app-btn>
- * <app-btn variant="danger" [loading]="isDeleting$|async">Supprimer</app-btn>
- * <app-btn variant="secondary" [icon]="PlusIcon">Ajouter</app-btn>
- */
 import {
   ChangeDetectionStrategy,
   Component,
@@ -28,20 +18,13 @@ import type { ButtonSize, ButtonVariant } from '../../ui.types';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BtnComponent {
-  /** Variante visuelle : 'primary' | 'secondary' | 'ghost' | 'danger' */
   variant = input<ButtonVariant>('primary');
-  /** Taille : 'sm' | 'md' | 'lg' */
   size = input<ButtonSize>('md');
-  /** Affiche un spinner et désactive le bouton */
   loading = input<boolean>(false);
-  /** Désactive le bouton */
   disabled = input<boolean>(false);
-  /** Icône Lucide optionnelle à gauche du label */
   icon = input<LucideIconData | undefined>(undefined);
-  /** Type HTML du bouton */
   type = input<'button' | 'submit' | 'reset'>('button');
 
-  /** Émis lors du clic (non émis si loading ou disabled) */
   btnClick = output<MouseEvent>();
 
   protected get isDisabled(): boolean {

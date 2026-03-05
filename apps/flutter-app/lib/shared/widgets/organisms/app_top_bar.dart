@@ -1,33 +1,3 @@
-/// Organism : AppTopBar — Learn@Home
-///
-/// Barre d'application supérieure conforme à la charte UI.
-/// Hauteur 56px, fond color-surface, bordure bas color-border.
-/// Ombre uniquement en scroll (gérée par [SliverAppBar] ou scrolledUnderElevation).
-///
-/// Implémente [PreferredSizeWidget] pour s'insérer dans [Scaffold.appBar].
-///
-/// ## Paramètres
-/// - [title]        : titre de la page (text-heading)
-/// - [actions]      : widgets d'action à droite (icônes, avatar)
-/// - [leading]      : widget à gauche (défaut: bouton retour si navigable)
-/// - [showBackButton]: force l'affichage du bouton retour
-///
-/// ## Exemple
-/// ```dart
-/// Scaffold(
-///   appBar: AppTopBar(
-///     title: 'Mes tâches',
-///     actions: [
-///       AppIconButton(
-///         icon: LucideIcons.plus,
-///         semanticLabel: 'Ajouter une tâche',
-///         onPressed: () => context.push('/tasks/new'),
-///       ),
-///       AppAvatar(name: user.displayName, size: AppAvatarSize.sm),
-///     ],
-///   ),
-/// )
-/// ```
 library;
 
 import 'package:flutter/material.dart';

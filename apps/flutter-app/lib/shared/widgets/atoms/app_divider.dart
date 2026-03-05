@@ -1,15 +1,3 @@
-/// Atom : AppDivider — Learn@Home
-///
-/// Séparateur horizontal conforme aux tokens de la charte UI.
-/// Utilise color-border, hauteur 1px, margin top/bottom space-4.
-///
-/// ## Exemple
-/// ```dart
-/// const AppDivider()
-///
-/// // Avec label centré
-/// AppDivider(label: 'ou')
-/// ```
 library;
 
 import 'package:flutter/material.dart';

@@ -211,7 +211,6 @@ class _TaskFormPageState extends ConsumerState<TaskFormPage> {
   }
 }
 
-// ─── Date picker field ────────────────────────────────────────────────────────
 
 class _DatePickerField extends StatelessWidget {
   const _DatePickerField({
@@ -280,7 +279,6 @@ class _DatePickerField extends StatelessWidget {
   }
 }
 
-// ─── Student dropdown ─────────────────────────────────────────────────────────
 
 class _StudentDropdown extends StatelessWidget {
   const _StudentDropdown({

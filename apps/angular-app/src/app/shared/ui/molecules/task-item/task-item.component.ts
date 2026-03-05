@@ -1,21 +1,3 @@
-/**
- * @component TaskItemComponent
- * @description Élément de liste de tâche. Affiche le titre, le statut,
- * l'échéance et les actions d'édition/suppression.
- *
- * Règles métier :
- * - Un élève ne peut supprimer que ses propres tâches (logique dans le service)
- * - La coche marque une tâche comme 'done'
- *
- * @example
- * <app-task-item
- *   [task]="task"
- *   [canEdit]="canEdit"
- *   (statusChange)="onStatusChange($event)"
- *   (editTask)="onEdit($event)"
- *   (deleteTask)="onDelete($event)"
- * />
- */
 import {
   ChangeDetectionStrategy,
   Component,
@@ -46,16 +28,11 @@ import type { TaskItem, TaskStatus } from '../../ui.types';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TaskItemComponent {
-  /** Données de la tâche à afficher */
   task = input.required<TaskItem>();
-  /** Autorise les actions édition/suppression */
   canEdit = input<boolean>(false);
 
-  /** Émis quand l'utilisateur coche/décoche la tâche */
   statusChange = output<{ id: string; status: TaskStatus }>();
-  /** Émis quand l'utilisateur clique sur éditer */
   editTask = output<string>();
-  /** Émis quand l'utilisateur clique sur supprimer */
   deleteTask = output<string>();
 
   protected readonly PencilIcon = Pencil;

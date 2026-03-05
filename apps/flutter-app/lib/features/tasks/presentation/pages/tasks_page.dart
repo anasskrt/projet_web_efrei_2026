@@ -35,7 +35,6 @@ class TasksPage extends ConsumerWidget {
   }
 }
 
-// ─── Vue élève ────────────────────────────────────────────────────────────────
 
 class _StudentTasksView extends ConsumerWidget {
   const _StudentTasksView();
@@ -53,7 +52,6 @@ class _StudentTasksView extends ConsumerWidget {
   }
 }
 
-// ─── Vue bénévole ─────────────────────────────────────────────────────────────
 
 class _VolunteerTasksView extends ConsumerWidget {
   const _VolunteerTasksView();
@@ -101,7 +99,6 @@ class _VolunteerTasksView extends ConsumerWidget {
   }
 }
 
-// ─── Vue partagée liste + filtres ─────────────────────────────────────────────
 
 class _TaskListScaffold extends ConsumerWidget {
   const _TaskListScaffold({
@@ -190,7 +187,6 @@ class _TaskListScaffold extends ConsumerWidget {
   }
 }
 
-// ─── Barre de filtres par statut ──────────────────────────────────────────────
 
 class _StatusFilterBar extends ConsumerWidget {
   const _StatusFilterBar({required this.activeFilter});
@@ -244,7 +240,6 @@ class _StatusFilterBar extends ConsumerWidget {
   }
 }
 
-// ─── Carte de tâche ───────────────────────────────────────────────────────────
 
 class _TaskCard extends StatelessWidget {
   const _TaskCard({required this.task, this.studentName});
@@ -273,7 +268,6 @@ class _TaskCard extends StatelessWidget {
   }
 }
 
-// ─── Empty state ──────────────────────────────────────────────────────────────
 
 class _EmptyState extends StatelessWidget {
   const _EmptyState({required this.message});

@@ -1,31 +1,3 @@
-/// Atom : AppButton — Learn@Home
-///
-/// Bouton générique supportant 4 variantes et 3 tailles, conforme à la charte UI.
-/// Toutes les couleurs et dimensions sont issues des tokens AppColors / AppSpacing.
-///
-/// ## Paramètres
-/// - [label]    : texte affiché dans le bouton (obligatoire)
-/// - [onPressed]: callback d'action (null = état disabled)
-/// - [variant]  : [AppButtonVariant] — primary | secondary | ghost | danger
-/// - [size]     : [AppButtonSize] — sm | md | lg
-/// - [icon]     : icône optionnelle affichée à gauche du label (Lucide)
-/// - [isLoading]: si true, remplace le label par un spinner et désactive le bouton
-///
-/// ## Exemple
-/// ```dart
-/// AppButton(
-///   label: 'Créer une tâche',
-///   icon: LucideIcons.plus,
-///   onPressed: () => context.push('/tasks/new'),
-/// )
-///
-/// AppButton(
-///   label: 'Supprimer',
-///   variant: AppButtonVariant.danger,
-///   size: AppButtonSize.sm,
-///   onPressed: () => ref.read(taskNotifierProvider.notifier).deleteTask(id),
-/// )
-/// ```
 library;
 
 import 'package:flutter/material.dart';
@@ -35,7 +7,6 @@ import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_typography.dart';
 
-// ─── Types ────────────────────────────────────────────────────────────────────
 
 /// Variantes visuelles du bouton.
 enum AppButtonVariant { primary, secondary, ghost, danger }
@@ -43,7 +14,6 @@ enum AppButtonVariant { primary, secondary, ghost, danger }
 /// Tailles disponibles du bouton.
 enum AppButtonSize { sm, md, lg }
 
-// ─── Widget ───────────────────────────────────────────────────────────────────
 
 /// Bouton réutilisable Learn@Home.
 class AppButton extends StatelessWidget {
@@ -184,7 +154,6 @@ class AppButton extends StatelessWidget {
   }
 }
 
-// ─── Modèles internes ──────────────────────────────────────────────────────────
 
 class _ButtonTokens {
   const _ButtonTokens({

@@ -1,33 +1,3 @@
-/// Organism : AppModal — Learn@Home
-///
-/// Dialog/modal conforme à la charte UI : overlay sombre, radius-lg, shadow-lg.
-/// Structure : Header (titre + fermeture) + Body + Footer (actions).
-///
-/// Utiliser [showAppModal] pour afficher le modal (ne pas instancier directement).
-///
-/// ## Paramètres de [showAppModal]
-/// - [context]       : BuildContext
-/// - [title]         : titre du modal (text-heading)
-/// - [body]          : contenu du modal
-/// - [primaryLabel]  : texte du bouton primaire (obligatoire)
-/// - [onPrimary]     : callback bouton primaire
-/// - [secondaryLabel]: texte du bouton ghost (optionnel, défaut: "Annuler")
-/// - [onSecondary]   : callback bouton ghost (défaut: ferme le modal)
-/// - [isDismissible] : clique sur overlay ferme le modal (défaut: true)
-///
-/// ## Exemple
-/// ```dart
-/// showAppModal(
-///   context,
-///   title: 'Supprimer la tâche ?',
-///   body: const Text('Cette action est irréversible.'),
-///   primaryLabel: 'Supprimer',
-///   onPrimary: () {
-///     Navigator.pop(context);
-///     ref.read(taskNotifierProvider.notifier).deleteTask(task.id);
-///   },
-/// )
-/// ```
 library;
 
 import 'package:flutter/material.dart';
@@ -68,7 +38,6 @@ Future<T?> showAppModal<T>(
   );
 }
 
-// ─── Widget interne ───────────────────────────────────────────────────────────
 
 class _AppModal extends StatelessWidget {
   const _AppModal({

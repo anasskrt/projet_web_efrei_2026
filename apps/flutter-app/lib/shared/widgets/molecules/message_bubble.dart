@@ -1,29 +1,3 @@
-/// Molecule : MessageBubble — Learn@Home
-///
-/// Bulle de message pour l'interface chat. Deux modes : envoyé (moi) ou reçu (autre).
-/// Conforme à la charte UI : alignement, couleurs, rayons asymétriques.
-///
-/// ## Paramètres
-/// - [message]   : texte du message (obligatoire)
-/// - [timestamp] : heure d'envoi formatée (obligatoire)
-/// - [isMe]      : true = message envoyé par l'utilisateur courant
-/// - [senderName]: nom de l'expéditeur (affiché uniquement si !isMe)
-///
-/// ## Exemple
-/// ```dart
-/// MessageBubble(
-///   message: 'Bonjour, comment puis-je vous aider ?',
-///   timestamp: '14h32',
-///   isMe: false,
-///   senderName: 'Marie (tutrice)',
-/// )
-///
-/// MessageBubble(
-///   message: 'J\'ai du mal avec les fractions',
-///   timestamp: '14h33',
-///   isMe: true,
-/// )
-/// ```
 library;
 
 import 'package:flutter/material.dart';

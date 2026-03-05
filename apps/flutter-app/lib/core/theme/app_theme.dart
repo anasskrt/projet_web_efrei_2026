@@ -1,15 +1,3 @@
-/// Thème principal Material 3 — Learn@Home
-///
-/// Ce fichier assemble les tokens (couleurs, typo, radius) dans un [ThemeData]
-/// Material 3 complet. Injecter via [MaterialApp.theme].
-///
-/// Exemple :
-/// ```dart
-/// MaterialApp(
-///   theme: AppTheme.light,
-///   ...
-/// )
-/// ```
 library;
 
 import 'package:flutter/material.dart';

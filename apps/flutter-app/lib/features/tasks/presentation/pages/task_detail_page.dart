@@ -87,7 +87,6 @@ class TaskDetailPage extends ConsumerWidget {
   }
 }
 
-// ─── Contenu du détail ────────────────────────────────────────────────────────
 
 class _TaskDetailContent extends ConsumerWidget {
   const _TaskDetailContent({
@@ -207,7 +206,6 @@ class _TaskDetailContent extends ConsumerWidget {
   }
 }
 
-// ─── Ligne d'information ──────────────────────────────────────────────────────
 
 class _InfoRow extends StatelessWidget {
   const _InfoRow({

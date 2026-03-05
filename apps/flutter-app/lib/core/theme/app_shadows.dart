@@ -1,6 +1,3 @@
-/// Tokens d'ombres — Learn@Home
-///
-/// Source : shared/docs/UI.doc.md §2 "Ombres"
 library;
 
 import 'package:flutter/material.dart';

@@ -1,7 +1,3 @@
-/// Tokens de typographie — Learn@Home
-///
-/// Police : Inter (Google Fonts). Source : shared/docs/UI.doc.md §2 "Typographie"
-/// Usage : toujours utiliser AppTypography.xxx dans les TextStyle.
 library;
 
 import 'package:flutter/material.dart';

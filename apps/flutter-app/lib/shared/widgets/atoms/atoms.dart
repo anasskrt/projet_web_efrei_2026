@@ -1,4 +1,3 @@
-/// Atoms — barrel export
 library;
 
 export 'app_avatar.dart';

@@ -1,17 +1,3 @@
-/**
- * @component InputComponent
- * @description Champ de saisie atomique stylé avec les tokens Learn@Home.
- * Implémente ControlValueAccessor pour intégration avec les Reactive Forms.
- *
- * Pour un champ avec label et message d'erreur, utiliser `app-form-field` (molecule).
- *
- * @example
- * <!-- Standalone -->
- * <app-input type="search" placeholder="Rechercher..." />
- *
- * <!-- Avec Reactive Forms -->
- * <app-input type="email" [formControl]="emailControl" />
- */
 import {
   ChangeDetectionStrategy,
   Component,
@@ -41,24 +27,15 @@ import { LucideAngularModule, type LucideIconData } from 'lucide-angular';
   ],
 })
 export class InputComponent implements ControlValueAccessor {
-  /** Type HTML de l'input */
   type = input<string>('text');
-  /** Placeholder */
   placeholder = input<string>('');
-  /** Désactive l'input */
   disabled = input<boolean>(false);
-  /** Icône Lucide optionnelle (affichée à gauche de l'input) */
   prefixIcon = input<LucideIconData | undefined>(undefined);
-  /** Attribut autocomplete */
   autocomplete = input<string>('off');
-  /** ID HTML (pour l'association avec un label externe) */
   inputId = input<string | undefined>(undefined);
-  /** Icône Lucide optionnelle (affichée à droite de l'input, cliquable) */
   suffixIcon = input<LucideIconData | undefined>(undefined);
-  /** Aria-label du bouton suffixe */
   suffixAriaLabel = input<string>('');
 
-  /** Émis lors d'un clic sur le bouton suffixe */
   readonly suffixClick = output<void>();
 
   protected readonly inputRef = viewChild<ElementRef<HTMLInputElement>>('inputEl');
@@ -68,7 +45,6 @@ export class InputComponent implements ControlValueAccessor {
   private onChange: (value: string) => void = () => undefined;
   private onTouched: () => void = () => undefined;
 
-  // ─── ControlValueAccessor ─────────────────────────────
   writeValue(value: string): void {
     this.internalValue.set(value ?? '');
   }

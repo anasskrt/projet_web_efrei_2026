@@ -1,7 +1,3 @@
-/// Tokens d'espacement — Learn@Home
-///
-/// Grille basée sur 4px. Source : shared/docs/UI.doc.md §2 "Espacements"
-/// Usage : toujours utiliser AppSpacing.xxx, jamais de valeurs brutes dans les widgets.
 library;
 
 /// Constantes d'espacement (grille 4px).

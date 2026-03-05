@@ -1,28 +1,3 @@
-/// Molecule : AppCard — Learn@Home
-///
-/// Carte de contenu avec ombre, bordure et animation hover (sur mobile : effet ripple).
-/// Deux variantes : [AppCardVariant.elevated] (avec ombre) et [AppCardVariant.flat] (bordure seule).
-///
-/// ## Paramètres
-/// - [child]     : contenu de la carte (obligatoire)
-/// - [variant]   : [AppCardVariant.elevated] | [AppCardVariant.flat]
-/// - [padding]   : EdgeInsets custom (défaut : AppSpacing.s4)
-/// - [onTap]     : rend la carte tappable avec effet ripple
-/// - [semanticLabel] : label accessible si la carte est tappable
-///
-/// ## Exemple
-/// ```dart
-/// AppCard(
-///   child: TaskItem(task: task),
-///   onTap: () => context.push('/tasks/${task.id}'),
-///   semanticLabel: 'Ouvrir la tâche: ${task.title}',
-/// )
-///
-/// AppCard(
-///   variant: AppCardVariant.flat,
-///   child: Column(...),
-/// )
-/// ```
 library;
 
 import 'package:flutter/material.dart';
@@ -32,12 +7,10 @@ import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_shadows.dart';
 import '../../../core/theme/app_spacing.dart';
 
-// ─── Types ────────────────────────────────────────────────────────────────────
 
 /// Variantes visuelles de la carte.
 enum AppCardVariant { elevated, flat }
 
-// ─── Widget ───────────────────────────────────────────────────────────────────
 
 /// Carte de contenu Learn@Home.
 class AppCard extends StatelessWidget {
