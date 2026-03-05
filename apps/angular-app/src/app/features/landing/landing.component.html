@@ -1,0 +1,276 @@
+<!-- ─── NAV ───────────────────────────────────────────────── -->
+<header class="nav">
+  <div class="nav__container">
+    <a class="nav__logo" routerLink="/">
+      <span class="nav__logo-icon">🎓</span>
+      <span>Learn<strong>@</strong>Home</span>
+    </a>
+    <nav class="nav__links">
+      <a href="#join">Rejoindre</a>
+      <a href="#reviews">Témoignages</a>
+      <a href="#volunteer">Bénévoles</a>
+    </nav>
+    <div class="nav__actions">
+      <a class="btn btn--ghost btn--sm" routerLink="/auth/login">Se connecter</a>
+      <a class="btn btn--primary btn--sm" routerLink="/auth/register">Commencer</a>
+    </div>
+  </div>
+</header>
+
+<!-- ─── HERO ──────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero__container">
+    <div class="hero__badge">✨ Gratuit &amp; 100% en ligne</div>
+    <h1 class="hero__title">
+      Faites-vous aider<br />
+      <span class="hero__title--accent">gratuitement</span>
+    </h1>
+    <p class="hero__description">
+      Learn&#64;Home met en relation des élèves en difficulté scolaire avec des
+      bénévoles tuteurs diplômés. Des séances personnalisées, à votre rythme,
+      depuis chez vous.
+    </p>
+    <div class="hero__actions">
+      <a class="btn btn--primary btn--lg" routerLink="/auth/register">
+        Trouver un tuteur
+      </a>
+      <a class="btn btn--secondary btn--lg" href="#volunteer">
+        Devenir bénévole
+      </a>
+    </div>
+    <div class="hero__stats">
+      <div class="hero__stat">
+        <strong>2 500+</strong>
+        <span>Élèves accompagnés</span>
+      </div>
+      <div class="hero__stat-divider"></div>
+      <div class="hero__stat">
+        <strong>800+</strong>
+        <span>Tuteurs bénévoles</span>
+      </div>
+      <div class="hero__stat-divider"></div>
+      <div class="hero__stat">
+        <strong>98%</strong>
+        <span>Satisfaction</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero__illustration" aria-hidden="true">
+    <div class="hero__blob"></div>
+    <div class="hero__card hero__card--1">
+      <span>📅</span>
+      <p>Séance planifiée</p>
+      <small>Demain à 18h00</small>
+    </div>
+    <div class="hero__card hero__card--2">
+      <span>✅</span>
+      <p>Exercice terminé</p>
+      <small>Algèbre — Ch. 4</small>
+    </div>
+    <div class="hero__card hero__card--3">
+      <span>💬</span>
+      <p>Nouveau message</p>
+      <small>Thomas D. · Maintenant</small>
+    </div>
+  </div>
+</section>
+
+<!-- ─── JOIN ──────────────────────────────────────────────── -->
+<section class="join" id="join">
+  <div class="join__container">
+    <div class="join__header">
+      <h2 class="join__title">Rejoignez notre communauté</h2>
+      <p class="join__subtitle">Choisissez votre profil et commencez dès aujourd'hui</p>
+    </div>
+    <div class="join__cards">
+      <!-- Card Étudiant -->
+      <div class="join-card join-card--student">
+        <div class="join-card__icon">🎒</div>
+        <h3 class="join-card__title">Je suis élève</h3>
+        <p class="join-card__description">
+          Tu as besoin d'aide dans une matière ? Crée ton compte, décris tes
+          besoins et connecte-toi gratuitement avec un tuteur bénévole.
+        </p>
+        <ul class="join-card__perks">
+          <li>
+            <span class="join-card__check">✓</span>
+            Accès 100% gratuit
+          </li>
+          <li>
+            <span class="join-card__check">✓</span>
+            Tuteur dédié et personnalisé
+          </li>
+          <li>
+            <span class="join-card__check">✓</span>
+            Séances flexibles en ligne
+          </li>
+          <li>
+            <span class="join-card__check">✓</span>
+            Suivi de progression
+          </li>
+        </ul>
+        <a class="btn btn--primary btn--md" routerLink="/auth/register">
+          Créer mon compte élève
+        </a>
+      </div>
+
+      <!-- Card Enseignant -->
+      <div class="join-card join-card--teacher">
+        <div class="join-card__icon">📖</div>
+        <h3 class="join-card__title">Je suis bénévole</h3>
+        <p class="join-card__description">
+          Tu as un diplôme et l'envie d'aider ? Rejoins nos tuteurs bénévoles
+          et fais la différence dans le parcours d'un élève.
+        </p>
+        <ul class="join-card__perks">
+          <li>
+            <span class="join-card__check">✓</span>
+            Organisez vos disponibilités
+          </li>
+          <li>
+            <span class="join-card__check">✓</span>
+            Outil de suivi des tâches
+          </li>
+          <li>
+            <span class="join-card__check">✓</span>
+            Messagerie intégrée
+          </li>
+          <li>
+            <span class="join-card__check">✓</span>
+            Impact concret sur l'éducation
+          </li>
+        </ul>
+        <a class="btn btn--secondary btn--md" href="#volunteer">
+          Devenir tuteur bénévole
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── REVIEWS ───────────────────────────────────────────── -->
+<section class="reviews" id="reviews">
+  <div class="reviews__container">
+    <div class="reviews__header">
+      <h2 class="reviews__title">Ce que disent nos élèves</h2>
+      <p class="reviews__subtitle">Des milliers d'élèves ont déjà amélioré leurs résultats</p>
+    </div>
+    <div class="reviews__grid">
+      @for (review of reviews; track review.name) {
+        <article class="review-card">
+          <div class="review-card__stars">
+            @for (star of [1, 2, 3, 4, 5]; track star) {
+              <span
+                class="review-card__star"
+                [class.review-card__star--filled]="star <= review.rating"
+              >★</span>
+            }
+          </div>
+          <p class="review-card__text">{{ review.text }}</p>
+          <div class="review-card__author">
+            <div class="review-card__avatar">{{ review.avatar }}</div>
+            <div>
+              <p class="review-card__name">{{ review.name }}</p>
+              <p class="review-card__role">{{ review.role }}</p>
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ─── VOLUNTEER ─────────────────────────────────────────── -->
+<section class="volunteer" id="volunteer">
+  <div class="volunteer__container">
+    <div class="volunteer__content">
+      <div class="volunteer__badge">Bénévoles</div>
+      <h2 class="volunteer__title">
+        Un diplôme suffit pour<br />
+        <span class="volunteer__title--accent">changer des vies</span>
+      </h2>
+      <p class="volunteer__description">
+        Pour rejoindre notre réseau de tuteurs bénévoles, il vous suffit d'être
+        titulaire d'un diplôme dans votre domaine. Pas besoin d'être enseignant
+        professionnel — votre expertise est votre meilleur atout.
+      </p>
+      <div class="volunteer__steps">
+        <div class="volunteer__step">
+          <div class="volunteer__step-number">1</div>
+          <div>
+            <h4>Créez votre profil</h4>
+            <p>Renseignez vos diplômes, matières et disponibilités</p>
+          </div>
+        </div>
+        <div class="volunteer__step">
+          <div class="volunteer__step-number">2</div>
+          <div>
+            <h4>Validez votre diplôme</h4>
+            <p>Envoyez une photo ou scan, vérification sous 24h</p>
+          </div>
+        </div>
+        <div class="volunteer__step">
+          <div class="volunteer__step-number">3</div>
+          <div>
+            <h4>Commencez à aider</h4>
+            <p>Recevez vos premiers élèves et planifiez vos séances</p>
+          </div>
+        </div>
+      </div>
+      <a class="btn btn--primary btn--lg" routerLink="/auth/register">
+        Rejoindre en tant que bénévole
+      </a>
+    </div>
+
+    <div class="volunteer__subjects">
+      <p class="volunteer__subjects-label">Matières disponibles</p>
+      <div class="volunteer__subjects-grid">
+        @for (subject of subjects; track subject.label) {
+          <div class="subject-chip">
+            <span>{{ subject.icon }}</span>
+            <span>{{ subject.label }}</span>
+          </div>
+        }
+      </div>
+      <div class="volunteer__diploma-note">
+        <span class="volunteer__diploma-note-icon">🎓</span>
+        <p>
+          Exemples de diplômes acceptés : Licence, Master, BTS, BUT, Doctorat…
+          dans n'importe quel domaine académique.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="footer__container">
+    <div class="footer__brand">
+      <a class="footer__logo" routerLink="/">
+        <span>🎓</span>
+        <span>Learn<strong>@</strong>Home</span>
+      </a>
+      <p class="footer__tagline">
+        La plateforme gratuite de soutien scolaire en ligne.
+      </p>
+      <a class="footer__mail" href="mailto:contact@learnathome.fr">
+        ✉️ contact&#64;learnathome.fr
+      </a>
+    </div>
+
+    <div class="footer__links">
+      <div class="footer__col">
+        <h4>Plateforme</h4>
+        <a routerLink="/auth/login">Se connecter</a>
+        <a routerLink="/auth/register">Créer un compte</a>
+        <a routerLink="/dashboard">Tableau de bord</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <p>© 2026 Learn&#64;Home — Tous droits réservés</p>
+    <p>Projet EFREI Master 2 — Fait avec ❤️ pour l'éducation</p>
+  </div>
+</footer>
